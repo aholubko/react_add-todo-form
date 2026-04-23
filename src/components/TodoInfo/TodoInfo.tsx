@@ -8,11 +8,10 @@ type Props = {
 export const TodoInfo = ({ todo }: Props) => (
   <article
     data-id={todo.id}
-    key={todo.id}
     className={todo.completed ? 'TodoInfo TodoInfo--completed' : 'TodoInfo'}
   >
     <h2 className="TodoInfo__title">{todo.title}</h2>
 
-    <UserInfo user={todo.user} />
+    {todo.user && <UserInfo user={todo.user} />}
   </article>
 );
